@@ -1,84 +1,118 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const furnitureData = [
+        {
+            name: 'Sofa',
+            description: 'Comfortable three-seater sofa',
+            image: './pictures/pic/360_F_428769739_IzP2vuPUuylzoaZZAq5UBBD7zDtbKpFS.webp',
+            price: '$599'
+        },
+        {
+            name: 'Dining Table',
+            description: 'Elegant dining table for family gatherings',
+            image: './pictures/pic/360_F_371926762_MdmDMtJbXt7DoaDrxFP0dp9Nq1tSFCnR.webp',
+            price: '$299'
+        },
+        {
+            name: 'Armchair',
+            description: 'Classic armchair with plush cushions',
+            image: 'https://asset1.cxnmarksandspencer.com/is/image/mands/__T65_5600B_KC__EC_CHR_EMIL_0?wid=1000&qlt=100&fmt=webp-alpha&bfc=off',
+            price: '$199'
+        },
+        {
+            name: 'Bed Frame',
+            description: 'Modern queen-size bed frame',
+            image: 'https://casper.com/dw/image/v2/BFHV_PRD/on/demandware.static/-/Sites-casper-master/default/dwa90f78b5/product_images/Haven%20Bed%20Frame/haven-bed-frame-heathered-gray-1.jpg?sw=540&sh=333&sm=cut',
+            price: '$499'
+        },
+        {
+            name: 'Coffee Table',
+            description: 'Glass-top coffee table with wooden legs',
+            image: 'https://www.furnitureworld.co.uk/images/products/large/2888_57601.jpg',
+            price: '$129'
+        },
+        {
+            name: 'Bookshelf',
+            description: 'Tall bookshelf with adjustable shelves',
+            image: 'https://i5.walmartimages.com/seo/Homfa-Standard-Bookshelf-Bookcase-6-Tier-Tall-Bookshelf-Display-Shelves-Standing-Cube-Organizer-for-Living-Room-Dark-Oak_10453b7e-f700-4b28-91f5-56eb319f3320.bd58eecd024e9ff8555b6548487c45a5.png',
+            price: '$249'
+        },
+        // Add more furniture items as needed
+    ];
 
-function myFunction() {
-  // Declare variables
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("mySearch");
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("myMenu");
-  li = ul.getElementsByTagName("li");
+    const appContainer = document.getElementById('app');
+    const gridContainer = document.createElement('div');
+    gridContainer.classList.add('grid-container');
 
-  // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
-    }
-  }
-}
-function likeFunction(buttonNumber) {
-  alert('You liked button ' + buttonNumber);
-  // You can customize this function to perform any action when a like button is clicked
-}
-function squareIconFunction(iconNumber) {
-  alert('You clicked square icon ' + iconNumber);
-  // You can customize this function to perform any action when a square icon is clicked
-}
-    // Function to handle menu item click
-    function handleMenuItemClick(item) {
-        console.log("Selected menu item:", item.textContent);
-        // Add your desired actions here
-    }
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.placeholder = 'Search furniture...';
 
-    // Function to set up event listeners for menu items
-    function setupMenu() {
-        var menuItems = document.querySelectorAll("#myMenu a");
+    const searchButton = document.createElement('button');
+    searchButton.textContent = 'Search';
+    searchButton.onclick = function () {
+        const searchTerm = searchInput.value.toLowerCase();
+        gridContainer.innerHTML = '';
 
-        menuItems.forEach(function (item) {
-            item.addEventListener("click", function () {
-                handleMenuItemClick(item);
-            });
-        });
-    }
+        for (let i = 0; i < furnitureData.length; i++) {
+            const item = furnitureData[i];
+            const nameLower = item.name.toLowerCase();
+            const descLower = item.description.toLowerCase();
 
-    // Call the setupMenu function when the document is ready
-    document.addEventListener("DOMContentLoaded", function () {
-        setupMenu();
-    });
-
-    // Function to handle menu item click
-    function handleMenuItemClick(item) {
-        console.log("Selected menu item:", item.textContent);
-
-        // Check if the clicked item is "SOFA"
-        if (item.textContent === "SOFA") {
-            // Add your specific action for "SOFA"
-            displaySofaSuggestions();
+            if (nameLower.indexOf(searchTerm) !== -1 || descLower.indexOf(searchTerm) !== -1) {
+                const card = createCard(item);
+                gridContainer.appendChild(card);
+            }
         }
 
-        // Add your desired actions for other menu items here
+        // Check if the return button already exists
+        const existingReturnButton = document.getElementById('returnButton');
+        if (!existingReturnButton) {
+            const returnButton = document.createElement('button');
+            returnButton.id = 'returnButton';
+            returnButton.textContent = 'Return to Main Page';
+            returnButton.onclick = resetFurnitureItems;
+            appContainer.appendChild(returnButton);
+        }
+    };
+
+    function resetFurnitureItems() {
+        location.reload();
     }
 
-    // Function to display suggestions for "SOFA"
-    function displaySofaSuggestions() {
-        // Replace this with your logic to display suggestions for "SOFA"
-        alert("Here are some sofa suggestions!");
+    appContainer.appendChild(searchInput);
+    appContainer.appendChild(searchButton);
+    appContainer.appendChild(gridContainer);
+
+    function createCard(item) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        const image = document.createElement('img');
+        image.src = item.image;
+        image.style.width = '300px'; // Set the width to 100px
+        image.alt = item.name;
+
+        const title = document.createElement('h3');
+        title.textContent = item.name;
+
+        const description = document.createElement('p');
+        description.textContent = item.description;
+
+        const price = document.createElement('p');
+        price.classList.add('price');
+        price.textContent = item.price;
+
+        card.appendChild(image);
+        card.appendChild(title);
+        card.appendChild(description);
+        card.appendChild(price);
+
+        return card;
     }
 
-    // Function to set up event listeners for menu items
-    function setupMenu() {
-        var menuItems = document.querySelectorAll("#myMenu a");
-
-        menuItems.forEach(function (item) {
-            item.addEventListener("click", function () {
-                handleMenuItemClick(item);
-            });
-        });
+    // Initial display of furniture items
+    for (let i = 0; i < furnitureData.length; i++) {
+        const card = createCard(furnitureData[i]);
+        gridContainer.appendChild(card);
     }
-
-    // Call the setupMenu function when the document is ready
-    document.addEventListener("DOMContentLoaded", function () {
-        setupMenu();
-    });
-
+});

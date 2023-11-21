@@ -3,211 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>furniture Website</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Furniture Shop</title>
 </head>
 <body>
-    <div class="container">
-        <div class="navbar-top">
-            <div class="social-link">
-                <i><img src="./pictures/pic/150-1508938_twitter-icon-twitter-black-logo-png-transparent.webp" width="40px"></i>
-                <i><img src="./pictures/pic/623dd7d270712bdafc63c38a.webp" alt="" width="40px"></i>
-                <i><img src="./pictures/pic/5ecec78673e4440004f09e77.webp" width="35px"></i>
-            </div>
-            <div class="icons">
-                <i><img src="https://imgs.search.brave.com/PYxSf9i4DB0260CMxWUwF-JDf0hvDcmaViuzxfxX8GE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZWRlbGl2ZXJ5Lm5l/dC81TVlTYms0NU04/MHFBd2VjcmxLemRR/L2NkZWY1NzY1LWI5/ZjQtNGJlYS1kNDM1/LTE4MzZjOTg0ZGEw/MC9wcmV2aWV3" alt="" width="40px"></i>
-                <i><img src="https://imgs.search.brave.com/yYytF-CeL3jLu8A4mUlcHG7PH4uGwCaOhirjwmtQv94/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pY29u/LWxpYnJhcnkuY29t/L2ltYWdlcy93aGl0/ZS1zaG9wcGluZy1j/YXJ0LWljb24vd2hp/dGUtc2hvcHBpbmct/Y2FydC1pY29uLTIu/anBn" alt="" width="40px"></i>
-            </div>
-            <div class="logo"></div>
+   
+    <div id="app">
+        <header>
+            <img src="./pictures/pic/392756598_340121151763087_6267913196665781070_n.jpg" alt="Logo" width="100" height="100">
+            <h1>Furniture Shop</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Living Room</a></li>
+                    <li><a href="#">Dining Room</a></li>
+                    <li><a href="#">Bedroom</a></li>
+                    <!-- Add more categories as needed -->
+                </ul>
+            </nav>
+        </header>
+   
+        <main>
+          <div id="categories">
+            <h2>Categories</h2>
+            <ul>
+                <li id="category1">Living Room</li>
+                <li id="category2">Dining Room</li>
+                <li id="category3">Bedroom</li>
+                <li id="category4">Office</li>
+                <!-- Add more categories as needed -->
+            </ul>
+            <div id="startBrowsing">
+              <p>Start browsing now </p>
+          </div>
         </div>
+     
+
+          
+        </main>
     </div>
 
-    <div>
-        <h3>YOUR SWEET HOME</h3>
-    </div>
-
-    <div>
-        <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-        <ul id="myMenu">
-            <li><a href="#">SOFA</a></li>
-            <li><a href="#">LIGHTING</a></li>
-            <li><a href="#">KITCHEN</a></li>
-            <li><a href="#">APPLIANCES</a></li>
-            <li><a href="#">ORGANISATION</a></li>
-            <li><a href="#">CHAIRS</a></li>
-            <li><a href="#">PILLOW&RUGS</a></li>
-            <li><a href="#">CUSTOM CABINETRY</a></li>
-            <li><a href="#">OUTDOOR</a></li>
-        </ul>
-    </div>
-    <div class="container">
-        <!-- Your existing code -->
-
-        <!-- Add 10 circular icons with pictures -->
-        <div class="circle-icons">
-            <div class="circle-icon"><img src="https://assets.wfcdn.com/im/59318536/resize-h1600-w1600%5Ecompr-r85/1282/128208242/Lancelot+Striped+Polyester+Indoor%2FOutdoor+Throw+Pillow.jpg" alt="Icon 1"></div>
-            <div class="circle-icon"><img src="https://assets.wfcdn.com/im/43523596/resize-h800-w800%5Ecompr-r85/2589/258984278/Pizarro+Box+Cushion+Armchair+Slipcover.jpg" alt="Icon 2"></div>
-            <div class="circle-icon"><img src="https://assets.wfcdn.com/im/38766004/resize-h800-w800%5Ecompr-r85/1693/169340064/Altom+600+GSM+6+Piece+Egyptian-Quality+Cotton+Towel+Set.jpg" alt="Icon 3"></div>
-            <div class="circle-icon"><img src="https://assets.wfcdn.com/im/12821915/resize-h800-w800%5Ecompr-r85/2608/260811613/Dyane+Upholstered+Bed+Full+Bed+Frame+with+Charging+Station+and+LED+Lights.jpg" alt="Icon 4"></div>
-            <div class="circle-icon"><img src="https://assets.wfcdn.com/im/98119227/resize-h800-w800%5Ecompr-r85/2566/256638004/Lecanto+7+-+Piece+Upholstered+Sectional.jpg" alt="Icon 5"></div>
-            <div class="circle-icon"><img src="https://assets.wfcdn.com/im/22429964/resize-h500-w500%5Ecompr-r85/3193/31932115/Wayfair+Basics%C2%AE+Thermal+Blackout+Grommet+Curtain+Panel.jpg" alt="Icon 6"></div>
-            <div class="circle-icon"><img src="https://assets.wfcdn.com/im/24994296/resize-h800%5Ecompr-r85/1471/147182846/default_name.jpg" alt="Icon 7"></div>
-            <div class="circle-icon"><img src="https://assets.wfcdn.com/im/69638039/resize-h800-w800%5Ecompr-r85/2553/255309516/Fant+Dining+Table.jpg" alt="Icon 8"></div>
-            <div class="circle-icon"><img src="https://assets.wfcdn.com/im/73972172/resize-h500-w750%5Ecompr-r85/6122/61225709/default_name.jpg" alt="Icon 9"></div>
-            <div class="circle-icon"><img src="https://assets.wfcdn.com/im/21138783/resize-h800-w800%5Ecompr-r85/1676/167603131/GreenPan+Reserve+Hard+Anodized+Healthy+Ceramic+Nonstick+10+Piece+Cookware+Set.jpg" alt="Icon 10"></div>
-        </div>
-    </div>
-    <div class="container">
-        
-        </div>
-    </div>
-    <p class="friday">the early black friday deals</p>
-    <p class="black">popular categorie</p>
-    <div class="gallery">
-        <a target="_blank" href="img_5terre.jpg">
-          <img src="https://www.ikea.com/us/en/images/products/klippan-loveseat-bomstad-black__0827136_pe709127_s5.jpg?f=s" alt="Cinque Terre" width="600" height="400">
-        </a>
-        <div class="desc">KLIPPAN
-            Loveseat, Bomstad black
-            
-            $549.00Price $ 549.00
-            (33)
-            As low as $92/mo for 6 months using the IKEA Projekt Credit Card**. Details >
-            10
-            10 year limited warranty
-            
-            Product features
-            Soft</div>
-      </div>
-      
-      <div class="gallery">
-        <a target="_blank" href="">
-          <img src="https://www.ikea.com/us/en/images/products/morabo-loveseat-grann-bomstad-golden-brown-wood__0815920_pe773107_s5.jpg?f=xxs" alt="MORABO SOFA" width="600" height="400">
-        </a>
-        <div class="desc">New Lower Price
-            MORABO
-            Loveseat, Grann/Bomstad golden brown/wood
-            
-            $1,199.00Price $ 1199.00
-            Previous price: $1,299.00$ 1299.00
-            Price valid from Sep 26, 2023</div>
-      </div>
-      
-      <div class="gallery">
-        <a target="_blank" href="https://www.ikea.com/us/en/images/products/morabo-loveseat-grann-bomstad-white-metal__0815923_pe773110_s5.jpg?f=s">
-          <img src="https://www.ikea.com/us/en/images/products/morabo-loveseat-grann-bomstad-white-metal__0815923_pe773110_s5.jpg?f=s" alt="Northern Lights" width="600" height="400">
-        </a>
-        <div class="desc">New Lower Price
-            MORABO
-            Loveseat, Grann/Bomstad white/metal
-            
-            $1,199.00Price $ 1199.00
-            Previous price: $1,299.00$ 1299.00
-            Price valid from Sep 26, 2023
-            (31)
-            Last chance to buy
-            As low as $100/mo for 12 months using the IKEA Projekt Credit Card**. Details >
-            10
-            10 year limited warranty
-            
-            </div>
-      </div>
-      
-      <div class="gallery">
-        <a target="_blank" href="https://www.ikea.com/us/en/images/products/friheten-sleeper-sectional-3-seat-w-storage-skiftebo-dark-gray__0175610_pe328883_s5.jpg?f=s">
-          <img src="https://www.ikea.com/us/en/images/products/friheten-sleeper-sectional-3-seat-w-storage-skiftebo-dark-gray__0175610_pe328883_s5.jpg?f=s" alt="Mountains" width="600" height="400">
-        </a>
-        <div class="desc">FRIHETEN
-            Sleeper sectional,3 seat w/storage, Skiftebo dark gray
-            
-            $899.00Price $ 899.00
-            (1282)
-            As low as $150/mo for 6 months using the IKEA Projekt Credit Card**. Details >
-            10
-            10 year limited warranty
-            
-            Product features
-            Firm</div>
-      </div>
-      <div class="gallery">
-        <a target="_blank" href="https://www.ikea.com/us/en/images/products/linanaes-sofa-with-chaise-vissle-dark-gray__1013909_pe829463_s5.jpg?f=s">
-          <img src="https://www.ikea.com/us/en/images/products/linanaes-sofa-with-chaise-vissle-dark-gray__1013909_pe829463_s5.jpg?f=s" alt="Cinque Terre" width="600" height="400">
-        </a>
-        <div class="desc">New Lower Price
-            LINANÄS
-            Sofa, with chaise/Vissle dark gray
-            
-            $399.00Price $ 399.00
-            Previous price: $499.00$ 499.00
-            Price valid from Nov 2, 2023
-            (58)
-            Earn 5% in rewards at IKEA using the IKEA Visa Credit Card*. Details >
-            10
-            10 year limited warranty
-            
-            Product features
-            Firm</div>
-      </div>
-      
-      <div class="gallery">
-        <a target="_blank" href="https://www.ikea.com/us/en/images/products/balkarp-sleeper-sofa-vissle-gray__0834830_pe671271_s5.jpg?f=sg">
-          <img src="https://www.ikea.com/us/en/images/products/balkarp-sleeper-sofa-vissle-gray__0834830_pe671271_s5.jpg?f=s" alt="Forest" width="600" height="400">
-        </a>
-        <div class="desc">BALKARP
-            Sleeper sofa, Vissle gray
-            
-            $249.00Price $ 249.00
-            (127)
-            Earn 5% in rewards at IKEA using the IKEA Visa Credit Card*. Details >
-            </div>
-      </div>
-      
-      <div class="gallery">
-        <a target="_blank" href="https://www.ikea.com/us/en/images/products/friheten-sleeper-sofa-skiftebo-blue__0779118_ph163073_s5.jpg?f=s">
-          <img src="https://www.ikea.com/us/en/images/products/friheten-sleeper-sofa-skiftebo-blue__0779118_ph163073_s5.jpg?f=s" alt="Northern Lights" width="600" height="400">
-        </a>
-        <div class="desc">FRIHETEN
-            Sleeper sofa, Skiftebo blue
-            
-            $749.00Price $ 749.00
-            (604)
-            As low as $125/mo for 6 months using the IKEA Projekt Credit Card**. Details >
-            10
-            10 year limited warranty
-            
-            Product features
-            Firm
-            
-            </div>
-      </div>
-      
-      
-    
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="main.js"></script>
-
-
+    <script src="./main.js"></script>
 </body>
 </html>
-
-
-
